@@ -30,3 +30,25 @@ func TestDouble(t *testing.T) {
 }
 
 // add test for TripleValue at this point
+func TestTripple(t *testing.T) {
+	tests := []struct {
+		in       int
+		expected int
+	}{
+		{
+			in:       20,
+			expected: 60,
+		},
+		{
+			in:       1,
+			expected: 3,
+		},
+	}
+	
+	for ii, test := range tests {
+		rr := TripleValue(test.in)
+		if rr != test.expected {
+			t.Errorf("Test %d, expected %d got %d\n", ii, test.expected, rr)
+		}
+	}
+}
